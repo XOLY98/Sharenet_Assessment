@@ -1,10 +1,28 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link @click="scrollToHeading()" to="/contact">Contact Us</router-link>
+      <img src="https://i.postimg.cc/j22q3Zv5/Sharenet-Logo_transparent.png" alt="Logo" />
+    
   </nav>
   <router-view/>
 </template>
+<script>
+export default {
+  methods: {
+    scrollToHeading() {
+      const headingElement = document.getElementById('contact');
+      if (headingElement) {
+        headingElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
+};
+</script>
+
+
+
+
 
 <style>
 #app {
@@ -17,14 +35,35 @@
 
 nav {
   padding: 30px;
+  text-align: right;
+  font-size: larger;
+
 }
 
 nav a {
   font-weight: bold;
   color: #2c3e50;
+
+ 
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: lightskyblue;
+}
+.logo{
+  width:  10px;
+}
+img{
+  height: 40px;
+  width: 150px;
+  display:flex;
+  transform: translateY(-70%);
+
 }
 </style>
+  
+
+
+
+
+
