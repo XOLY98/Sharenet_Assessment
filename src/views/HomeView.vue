@@ -16,7 +16,7 @@
       </thead>
       <tbody>
         <tr v-for="coin in coins" :key="coin.id">
-          <td>{{ coin.name }}</td>
+          <td><img :src="coin.image" alt="coin.image" class="coins">{{ coin.name }}</td>
           <td>{{ coin.symbol }}</td>
           <td>{{ coin.current_price }}</td>
           <td>{{ coin.price_change_percentage_1h_in_currency }}%</td>
@@ -93,7 +93,7 @@ export default {
     },
   },
   created() {
-     this.fetchCoins()
+     //this.fetchCoins()
   },
 };
 </script>
@@ -180,6 +180,12 @@ h2{
         .crypto {
     font-size:40px;
   }
+}
+.coins{
+  width:30px;
+  height:30px;
+  display:center;
+  margin-top:15px;
 }
 @media (max-width: 600px) {
         iframe{
